@@ -40,7 +40,7 @@ CREATE TABLE Tariffs (
 );
 
 CREATE TABLE Orders (
-    order_id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id SERIAL PRIMARY KEY,
     order_date DATE DEFAULT (CURRENT_DATE),
     order_time TIME DEFAULT (CURRENT_TIME),
     pickup_address TEXT,
@@ -52,7 +52,7 @@ CREATE TABLE Orders (
 );
 
 CREATE TABLE Order_Payments (
-    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    payment_id SERIAL PRIMARY KEY,
     order_id INT,
     tariff_name VARCHAR(100),
     distance DECIMAL(10, 2) CHECK (distance >= 0),
